@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <!-- 必须有app属性 -->
+    <v-app-bar app>github 搜索用户 <span style="font-size : 4px">( api.github.com/search/users )</span></v-app-bar>
+    <v-container>
+      <v-main>
+      <top/>
+      <user-list/>
+    </v-main>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Top from './components/Top.vue';
+import UserList from './components/UserList.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    Top,
+    UserList
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
